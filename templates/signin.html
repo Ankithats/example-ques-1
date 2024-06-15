@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container-fluid d-flex justify-content-center">
+<div  class="container login my-5 px-5 pt-4">
+<form class="form-horizontal"  method="post" enctype="multipart/form-data">
+   {% csrf_token %}
+   <div class="form-group my-3 ">
+       <div class="collapse navbar-collapse d-flex justify-content-center " id="navbarNavAltMarkup">
+           <a  class="navbar-brand me-5 mt-0 mb-4 " href="#"><img style="width:350px" src="{% static 'images/Screenshot 2024-02-20 162606.png' %}" alt=""></a>
+           
+         </div> 
+       </div> 
+       <div class="form-group my-3 ">
+       <input type="text" name="name" class="form-control"  placeholder="name">
+    </div>
+   
+
+   
+   
+   <div class="form-group my-3 ">
+       <input type="email" name="email" class="form-control"  placeholder="email">
+   </div>
+
+
+   <div class="form-group my-3 ">
+    <input type="file" name="image" class="form-control"  placeholder="Profile photo">
+</div>
+
+<div class="form-group my-3 ">
+    <input type="text" name="desi" class="form-control"  placeholder="Designation">
+</div>
+
+<div class="form-group my-3 ">
+    <input type="exp" name="exp" class="form-control"  placeholder="Experience">
+</div>
+
+   <div class="form-group my-3 ">
+       <input type="text"  name="username" class="form-control"  placeholder="username">
+   </div>
+
+   <div class="form-group my-3 ">
+       <input type="password" name="password" class="form-control"  placeholder="password">
+   </div>
+   <div class="form-group mt-2 mb-5 ">
+       <input type="password" name="cpassword" class="form-control"  placeholder="confirm password">
+   </div>
+
+   
+  
+
+   <div class="form-group mb-5 mx-auto">
+
+           <button  style="margin-left: 45%;" class="button-62"  type="submit" >SUBMIT</button>
+
+   </div>
+   {% for i in messages %}
+         <h3>{{i}}</h3>
+         {% endfor %}
+
+
+</form>
+
+</div>
+</div>
+
+
+{% endblock %} 

@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container-fluid d-flex justify-content-center">
+<div class="container log px-5 my-5 py-0 pt-5 ">
+<form class="form-horizontal"  method="post" enctype="multipart/form-data">
+   {% csrf_token %}
+ 
+   <div class="form-group my-3 mt-0 ">
+       <div class="collapse navbar-collapse d-flex justify-content-center " id="navbarNavAltMarkup">
+           <a  class="navbar-brand me-5 mt-0 mb-4 " href="#"><img style="width:350px" src="{% static 'images/Screenshot 2024-02-20 162606.png' %}" alt=""></a>
+           
+         </div> 
+       </div> 
+   
+
+   <div class="form-group my-3 px-5 mb-0 ">
+       <input type="text"  name="username" class="form-control"  placeholder="username">
+   </div>
+
+   <div class="form-group my-3 px-5">
+       <input type="password" name="password" class="form-control"  placeholder="password">
+   </div>
+
+   <h6 style="text-align: center;"><i>I'm new here<a href="{% url 'signin' %}">Signin</a></i></h6>
+  
+   
+  
+
+
+
+   <div class="form-group mt-5 ">
+
+     
+       <button style="margin-left: 35%;" class="button-62"  type="submit">LOG IN</button>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</form>
+
+</div>
+</div>
+
+{% for i in messages %}
+<h3 >{{i}}</h3>
+{% endfor %}
+
+
+{% endblock %} 

@@ -1,0 +1,60 @@
+{% load static%}
+<nav class="navbar navbar-expand-lg ll">
+    <div style="background-color:white;" class="container-fluid  d-flex justify-content-start my-0 mee">
+      <div class="navbar-nav">
+        <a class="nav-link active  ms-5" aria-current="page" href="{% url 'home' %}"><span style="font-size: large;color:black;font-weight:bold;">Home</span></a>
+     
+
+  
+
+        <li class="nav-item dropdown bt">
+          <a class="nav-link ms-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="{% static 'images/icons8-3-dots-30.png' %}" alt="">
+            
+          </a> 
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">About us</a></li>
+            <li><a class="dropdown-item" href="#">Help</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">mobile apps</a></li>
+            <li><a class="dropdown-item" href="#">feed back</a></li>
+          
+          </ul>
+
+          <li  class="nav-item">
+            <a class="nav-link ms-4" href="#"><img src="{% static 'images/icons8-globe-24 (4).png' %}" alt=""></a>
+           </li>
+    
+      </div>
+   
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse d-flex justify-content-center" id="navbarNavAltMarkup">
+        <a style="color: rgb(0, 0, 0);" class="navbar-brand me-5 mt-0 " href="#"><img style="width:350px; margin-left:8%;" src="{% static 'images/Screenshot_2024-02-22_143932-removebg-preview.png' %}" alt=""></a>
+        
+      </div> 
+     
+          
+        <ul class="nav justify-content-end">
+          {% if user.is_authenticated %}
+            <li  class="nav-item">
+              <a class="nav-link a " aria-current="page" href="#"><span style="font-size: large;color:rgb(3, 2, 2);font-weight:bold;">{{user.username}}</span></a>
+            </li>
+            <li  class="nav-item">
+             <a class="nav-link" href="{% url 'logout' %}"><img src="{% static 'images/icons8-log-out-32.png' %}" alt=""></a>
+            </li>
+          {% else %}
+            <li class="nav-item ">
+              <a class="nav-link" href="{% url 'login' %}"><img src="{% static 'images/icons8-person-32.png' %}" alt=""></a>
+            </li>
+        {% endif %}
+           
+
+      
+        <li class="nav-item">
+          <a class="nav-link" href="#"><img src="{% static 'images/icons8-heart-32 (4).png' %}" alt=""></a>
+        </li>
+        </ul>
+
+        </nav>

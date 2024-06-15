@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+<div class="container-fluid rt">
+   
+        {% if user.is_authenticated %}
+        <div  class="container log my-5 px-5 pt-4">
+           
+            
+              
+                   <div class="d-flex justify-content-center " >
+                       <a  class="navbar-brand me-5 mt-0 mb-4 " href="#"><img style="width:350px;margin-left: 7%;" src="{% static 'images/Screenshot 2024-02-20 162606.png' %}" alt=""></a>
+                       
+                     </div> 
+      
+        <div class="my-3 mx-3 kk" style="width: 8rem;">
+          
+            <img style="margin-left: 170px;border-radius:50%;" src="{{emp.image.url}}" class="card-img-top" alt="...">
+          
+        </div>
+       
+          <div class="my-3 mx-5 " style="width: 18rem;">
+            <h3 style="font-size:25px; margin-left:170px;" class="card-text">{{emp.desi}}</h3>
+            <p style="font-weight:500; margin-left:165px;font-size:17px;" >{{emp.exp}}</p>
+            
+          </div>
+        
+        </div>
+    
+    
+      {% endif %}
+ 
+{% endblock %}
